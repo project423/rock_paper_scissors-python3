@@ -5,7 +5,8 @@ print('Welcome to rock paper scissors')
 # player_one = player_one.lower()
 play = True
 score = [0,0]
-while play and max(score) < 3:
+winning_score = 3
+while play and max(score) < winning_score:
     player_one = input("Enter player ones choice: ").lower()
     player_two = choice(['rock', 'paper', 'scissors'])
     if player_one == player_two:
@@ -33,15 +34,14 @@ while play and max(score) < 3:
             score[1] +=1
     print(f'Player one chose {player_one}, and the computer chose {player_two}')
     print(f'The computer has a score of {score[1]} and you have a score of {score[0]}')
-    if score[0] == 3:
+    if score[0] == winning_score:
         print('Congrats you win!')
-    elif score[1] == 3:
+    elif score[1] == winning_score:
         print('Sorry, the computer won')
-    if max(score) == 3:
+    if max(score) == winning_score:
         score = [0,0]
         play_again = input("Do you want to play again y/n? ").lower()
-        if play_again != 'y':
-            
+        if play_again != 'y':            
             play = False
         
     
